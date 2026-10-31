@@ -92,33 +92,6 @@ public:
             createaccount(username,newsalt,newhashkey);
         }
     }
-
-    /*void deleteuser(string password){
-        string u,s,h,f;
-        string filetobedltd = "";
-        cout << "Enter password to confirm account deletion" << endl;
-        cin >> password;
-        ifstream file("user_login.txt");
-        ofstream tempfile("temp.txt");
-        while(getline(file,u,'|') && getline(file,s,'|') && getline(file,h,'|') && getline(file,f)){
-                tempfile << u << "|" << s << "|" << h << "|" << f << endl;
-                filetobedltd = f;
-                string newhashkey = hashpassword(password,salt);
-                if(newhashkey == hashkey){
-                    file.close();
-                    tempfile.close();
-                    remove("user_login.txt");
-                    rename("temp.txt","user_login.txt");
-                    if(!filetobedltd.empty()){
-                        remove(filetobedltd.c_str());
-                    }
-                }
-        }
-
-        cout << "User deleted successfully" << endl;
-        return;
-    }*/
-
 };
 
 class Todolist {
