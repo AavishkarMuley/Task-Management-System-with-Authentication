@@ -8,7 +8,7 @@ A high-performance, multi-user To-Do List and Task Management application built 
 
 Traditional console-based To-Do lists either store all user tasks in a single shared file or keep passwords in plain text. This project solves both issues:
 1. **User-Isolated Task Files:** On registration, each user creates or gets assigned a dedicated task file (`<list_name>.txt`). A user can never access or overwrite another user's task list.
-2. **$O(1)$ In-Memory Task Operations:** Tasks are maintained in a **Doubly Linked List** indexed by an `unordered_map<string, Node*>`, enabling instant $O(1)$ task insertion and $O(1)$ deletion by task name without linear array scanning.
+2. **O(1) In-Memory Task Operations:** Tasks are maintained in a **Doubly Linked List** indexed by an `unordered_map<string, Node*>`, enabling instant $O(1)$ task insertion and $O(1)$ deletion by task name without linear array scanning.
 3. **Salted DJB2 Authentication:** Prevents credential leaks and Rainbow Table attacks using a dynamic salt and one-way cryptographic hash per account.
 4. **Interactive CLI Security:** Passwords are typed with real-time `*` masking using Windows `_getch()` with full Backspace and Enter support.
 
@@ -59,7 +59,7 @@ Traditional console-based To-Do lists either store all user tasks in a single sh
 ## 🔑 Core Features
 
 ### 1. To-Do List & Task Management Engine
-* **Constant Time Insertion ($O(1)$):** New tasks with task name, time, and date are attached directly to the tail of the Doubly Linked List in $O(1)$ time.
+* **Constant Time Insertion (O(1)):** New tasks with task name, time, and date are attached directly to the tail of the Doubly Linked List in $O(1)$ time.
 * **Instant Deletion by Name (O(1)):** An `unordered_map<string, Node*>` maps task names directly to their memory addresses in the linked list, allowing instant pointer re-linking without traversing the list.
 * **Duplicate Task Prevention:** The hash map validates incoming task names in $O(1)$ time to reject duplicate entries.
 * **Custom User Task Files:** Users define their own task list name upon sign-up, ensuring their tasks persist in an isolated file (e.g., `work_tasks.txt`, `daily_routines.txt`).
