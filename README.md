@@ -60,7 +60,7 @@ Traditional console-based To-Do lists either store all user tasks in a single sh
 
 ### 1. To-Do List & Task Management Engine
 * **Constant Time Insertion ($O(1)$):** New tasks with task name, time, and date are attached directly to the tail of the Doubly Linked List in $O(1)$ time.
-* **Instant Deletion by Name ($O(1)$):** An `unordered_map<string, Node*>` maps task names directly to their memory addresses in the linked list, allowing instant pointer re-linking without traversing the list.
+* **Instant Deletion by Name (O(1)):** An `unordered_map<string, Node*>` maps task names directly to their memory addresses in the linked list, allowing instant pointer re-linking without traversing the list.
 * **Duplicate Task Prevention:** The hash map validates incoming task names in $O(1)$ time to reject duplicate entries.
 * **Custom User Task Files:** Users define their own task list name upon sign-up, ensuring their tasks persist in an isolated file (e.g., `work_tasks.txt`, `daily_routines.txt`).
 * **Structured File Persistence:** Upon choosing **Save & Exit**, all memory-resident tasks are serialized into the user's file using pipe delimiters (`|`).
